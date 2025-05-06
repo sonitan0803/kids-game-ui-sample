@@ -1,0 +1,56 @@
+.main_container {
+    width: 1920px;
+    height: 1080px;
+    background-color: rgb(0, 0, 0);
+}
+
+.contents_container {
+    height: 95%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_container {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: "MadouFont";
+    color: white;
+}
+
+.title_container {
+    width: 75%;
+    height: 350px;
+    margin-top: 10%;
+    box-sizing: border-box;
+    border: 4mm ridge rgb(252, 255, 171);
+}
+
+.title {
+    font-family: "MadouFont";
+    display: flex;
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 150px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.menu_container {
+    font-family: "MadouFont";
+    width: 40%;
+    height: 250px;
+    background-color: white;
+    margin-bottom: 5%;
+}
