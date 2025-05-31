@@ -34,7 +34,6 @@
 }
 
 .title {
-    font-family: "MadouFont";
     display: flex;
     margin: 0 0 0 0;
     width: 100%;
@@ -48,7 +47,6 @@
 }
 
 .menu_container {
-    font-family: "MadouFont";
     width: 40%;
     height: 250px;
     background-color: white;

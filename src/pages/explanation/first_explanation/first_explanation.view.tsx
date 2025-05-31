@@ -5,30 +5,37 @@ import { useState } from "react";
 import {
     CharacterLine,
     useCharacterMessage,
+    YesNoPopup,
     type CharacterMessageProps,
 } from "@kids-game-ui/react";
 
-import Hakase from "../../assets/image/character/hakase/character_hakase.png";
-import Hakase02 from "../../assets/image/character/hakase/hakase1_smile.png";
+import Hakase from "@/assets/image/character/hakase/character_hakase.png";
+import Hakase02 from "@/assets/image/character/hakase/hakase1_smile.png";
 
-export function ExplanationView() {
+export function FirstExplanationView() {
     const [titleAnimationDone, setTitleAnimationDone] = useState(false);
 
-    const tmp: CharacterMessageProps[] = [
+    const firstMessage: CharacterMessageProps[] = [
         {
             message:
-                "拝啓利用者の皆様\nこのWEBアプリは kids-game-ui を利用したサンプルアプリです。",
+                "やあ\nこのWEBアプリは kids-game-ui を利用したサンプルアプリじゃよ",
             characterImage: Hakase02,
             characterName: "神山",
         },
         {
             characterImage: Hakase02,
-            message: "実際に触ってみて、できることを確認してみよう。",
+            message:
+                "実際に実装と、このサンプルを通じて\n使い方を学んでいくのじゃ",
+            characterName: "神山",
+        },
+        {
+            characterImage: Hakase02,
+            message: "早速使い方を学ぶかい?",
             characterName: "神山",
         },
     ];
 
-    const characterMessage = useCharacterMessage(tmp);
+    const characterMessage = useCharacterMessage(firstMessage);
 
     return (
         <div className={styles.main_container}>
@@ -74,6 +81,39 @@ export function ExplanationView() {
                     >
                         {characterMessage.currentMessage}
                     </CharacterLine>
+                </motion.div>
+            )}
+
+            {titleAnimationDone && characterMessage.isEnd && (
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                    }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    style={{
+                        position: "fixed",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        zIndex: 1000,
+                        width: "auto",
+                        marginTop: 0,
+                    }}
+                >
+                    <YesNoPopup
+                        handleClickNo={() => {
+                            window.location.href = "/";
+                        }}
+                        handleClickYes={() => {
+                            window.location.href =
+                                "/explanation/first_explanation";
+                        }}
+                        height="300px"
+                        width="500px"
+                        fontColor="white"
+                        border="5mm ridge rgb(255, 255, 255)"
+                    />
                 </motion.div>
             )}
         </div>
